@@ -8,9 +8,11 @@ library(plotly)
 library(dplyr)
 
 ckanSQL <- function(url) {
-  # Make the Request
+  # Clean the URL
   url <- gsub(" ", "%20", url)
+  # Print URL for debugging
   print(url)
+  # Make the Request
   r <- GET(url)
   # Extract Content
   c <- content(r, "text")
